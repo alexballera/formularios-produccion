@@ -45,11 +45,11 @@ if ($success){
       exit;
   } else {
     // if (isset($name)) {
-    $query = mysqli_query("insert into form(name, phone, email, message) values ('$name', '$phone', '$email','$message'), MYSQLI_STORE_RESULT"); //Insert Query
-    echo "Form Submitted succesfully";
+    mysqli_query($enlace, "insert into form (name, phone, email, message) VALUES ('$name', '$phone', '$email','$message'), MYSQLI_STORE_RESULT"); //Insert Query
+    echo "Form Submitted succesfully \r\n";
     // }
-    echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
-    echo "Información del host: " . mysqli_get_host_info($enlace) . PHP_EOL;
+    echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial. \r\n" . PHP_EOL;
+    echo "Información del host: \r\n" . mysqli_get_host_info($enlace) . PHP_EOL;
 
     mysqli_close($enlace);
   }
