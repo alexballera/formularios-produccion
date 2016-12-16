@@ -35,15 +35,6 @@ $header .= 'From:' . $email. '\r\n'; // Sender's Email
 // send email
 $success = mail($emailTo, $subject, $body, $header);
 
-// $connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server..
-// $db = mysql_select_db("aballera_formularios", $connection); // Selecting Database
-// if (isset($name)) {
-// $query = mysql_query("insert into form_element(name, lastname, phone, email, message) values ('$name', '$phone', '$email','$message')"); //Insert Query
-// echo "Form Submitted succesfully";
-// }
-// mysql_close($connection); // Connection Closed
-
-// redirect to success page
 if ($success){
   echo '<script language="javascript">alert("Tu consulta ha sido enviada correctamente.");</script>';
   $enlace = mysqli_connect("localhost", "aballera_alex", "Juan03:16", "aballera_formularios");
@@ -54,7 +45,7 @@ if ($success){
       exit;
   } else {
     if (isset($name)) {
-    $query = mysqli_query("insert into form(name, lastname, phone, email, message) values ('$name', '$lastname', '$phone', '$email','$message'), MYSQLI_STORE_RESULT"); //Insert Query
+    $query = mysqli_query("insert into form(name, phone, email, message) values ('$name', '$phone', '$email','$message'), MYSQLI_STORE_RESULT"); //Insert Query
     echo "Form Submitted succesfully";
     }
     echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
