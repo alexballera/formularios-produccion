@@ -35,8 +35,6 @@ $header .= 'From:' . $email. '\r\n'; // Sender's Email
 // send email
 $success = mail($emailTo, $subject, $body, $header);
 
-$enlace = mysqli_connect("localhost", "aballera_alex", "Juan03:16", "aballera_formularios");
-
 // $connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server..
 // $db = mysql_select_db("aballera_formularios", $connection); // Selecting Database
 // if (isset($name)) {
@@ -48,6 +46,7 @@ $enlace = mysqli_connect("localhost", "aballera_alex", "Juan03:16", "aballera_fo
 // redirect to success page
 if ($success){
   echo '<script language="javascript">alert("Tu consulta ha sido enviada correctamente.");</script>';
+  $enlace = mysqli_connect("localhost", "aballera_alex", "Juan03:16", "aballera_formularios");
   if (!$enlace) {
       echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
       echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
