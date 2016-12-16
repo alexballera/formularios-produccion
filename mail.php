@@ -55,7 +55,7 @@ if ($success){
       exit;
   } else {
     if (isset($name)) {
-    $query = mysqli_query("insert into form(name, lastname, phone, email, message) values ('$name', '$lastname', '$phone', '$email','$message')"); //Insert Query
+    $query = mysqli_query("insert into form(name, lastname, phone, email, message) values ('$name', '$lastname', '$phone', '$email','$message'), MYSQLI_STORE_RESULT"); //Insert Query
     echo "Form Submitted succesfully";
     }
     echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
