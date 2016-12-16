@@ -9,7 +9,7 @@ $nombre = strip_tags($name);
 $fecha = time();
 $fechaFormateada = date("j/n/Y", $fecha);
 
-$emailTo = "alexballera@yahoo.com";
+$emailTo = "alexballera@gmail.com";
 $subject = "Nuevo mensaje de $nombre";
 
 $body .= "Mensaje Desde El Formulario Web Alenta.\n";
