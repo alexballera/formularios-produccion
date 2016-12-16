@@ -35,7 +35,7 @@ $header .= 'From:' . $email. '\r\n'; // Sender's Email
 // send email
 $success = mail($emailTo, $subject, $body, $header);
 
-$enlace = mysqli_connect("127.0.0.1", "aballera_alex", "Juan03:16", "aballera_formularios");
+$enlace = mysqli_connect("localhost", "aballera_alex", "Juan03:16", "aballera_formularios");
 
 // $connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server..
 // $db = mysql_select_db("aballera_formularios", $connection); // Selecting Database
@@ -55,7 +55,7 @@ if ($success){
       exit;
   } else {
     if (isset($name)) {
-    $query = mysqli_query("insert into aballera_formularios(name, lastname, phone, email, message) values ('$name', '$phone', '$email','$message')"); //Insert Query
+    $query = mysqli_query("insert into form(name, lastname, phone, email, message) values ('$name', '$lastname', '$phone', '$email','$message')"); //Insert Query
     echo "Form Submitted succesfully";
     }
     echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
