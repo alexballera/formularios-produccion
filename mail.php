@@ -44,13 +44,10 @@ if ($success){
       echo "error de depuración: " . mysqli_connect_error() . "\r\n";
       exit;
   } else {
-    // if (isset($name)) {
     mysqli_query($enlace, "INSERT INTO form_element (name, phone, email, message) VALUES ('$name', '$phone', '$email','$message')"); //Insert Query
-    echo "Form Submitted succesfully \r\n";
-    // }
-    echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial. \r\n" . PHP_EOL;
-    echo "Información del host: \r\n" . mysqli_get_host_info($enlace) . PHP_EOL;
-
+    // echo "Form Submitted succesfully \r\n";
+    // echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial. \r\n" . PHP_EOL;
+    // echo "Información del host: \r\n" . mysqli_get_host_info($enlace) . PHP_EOL;
     mysqli_close($enlace);
   }
 }else{
