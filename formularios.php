@@ -7,7 +7,7 @@ $data           = array();      // array to pass back data
 $name = $_POST["name"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
-$message = $_POST["message"];
+$msg = $_POST["msg"];
 $nombre = strip_tags($name);
 
 $fecha = time();
@@ -24,7 +24,7 @@ $body .= "Correo: " . $email ."\n";
 $body .= "\n";
 $body .= "Teléfono: " . $phone ."\n";
 $body .= "\n";
-$body .= "Mensaje: " . $message ."\n";
+$body .= "Mensaje: " . $msg ."\n";
 $body .= "\n";
 $body .= "Fecha: " . $fechaFormateada ."\n";
 
