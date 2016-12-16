@@ -37,10 +37,10 @@ $header .= 'From:' . $email. '\r\n'; // Sender's Email
     // if any of these variables don't exist, add an error to our $errors array
 
     if (empty($_POST['name']))
-        $errors['name'] = 'Name is required.';
+        $errors['name'] = 'El nombre es requerido!.';
 
     if (empty($_POST['email']))
-        $errors['email'] = 'Email is required.';
+        $errors['email'] = 'El email es requerido!.';
 
 
 // return a response ===========================================================
@@ -61,7 +61,7 @@ $header .= 'From:' . $email. '\r\n'; // Sender's Email
         // show a message of success and provide a true success variable
         $data['success'] = true;
         mail($emailTo, $subject, $body, $header);
-        $data['message'] = 'Success!';
+        // $data['message'] = 'Success!';
     }
 
     // return all our data to an AJAX call
