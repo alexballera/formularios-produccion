@@ -38,14 +38,14 @@ $success = mail($emailTo, $subject, $body, $header);
 if ($success){
   echo '<script language="javascript">alert("Tu consulta ha sido enviada correctamente.");</script>';
   $enlace = mysqli_connect("localhost", "aballera_alex", "Juan03:16", "aballera_formularios");
-  if (!$enlace) {
-      echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-      echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-      echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+  if (mysqli_connect_errno()) {
+      echo "Error: No se pudo conectar a MySQL. \r\n" . "\r\n";
+      echo "errno de depuración: " . mysqli_connect_errno() . "\r\n";
+      echo "error de depuración: " . mysqli_connect_error() . "\r\n";
       exit;
   } else {
     // if (isset($name)) {
-    mysqli_query($enlace, "insert into form (name, phone, email, message) VALUES ('$name', '$phone', '$email','$message'), MYSQLI_STORE_RESULT"); //Insert Query
+    mysqli_query($enlace, "INSERT INTO Form (name, phone, email, message) VALUES ('$name', '$phone', '$email','$message')"); //Insert Query
     echo "Form Submitted succesfully \r\n";
     // }
     echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial. \r\n" . PHP_EOL;
