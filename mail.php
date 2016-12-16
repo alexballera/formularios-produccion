@@ -35,6 +35,14 @@ $header .= 'From:' . $email. '\r\n'; // Sender's Email
 // send email
 $success = mail($emailTo, $subject, $body, $header);
 
+$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server..
+$db = mysql_select_db("aballera_formularios", $connection); // Selecting Database
+if (isset($name)) {
+$query = mysql_query("insert into form_element(name, lastname, phone, email, message) values ('$name', '$phone', '$email','$message')"); //Insert Query
+echo "Form Submitted succesfully";
+}
+mysql_close($connection); // Connection Closed
+
 // redirect to success page
 if ($success){
   echo '<script language="javascript">alert("Tu consulta ha sido enviada correctamente.");</script>';
