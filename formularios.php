@@ -64,7 +64,7 @@ $header .= 'From:' . $email. '\r\n'; // Sender's Email
         // show a message of success and provide a true success variable
         $data['success'] = true;
         mail($emailTo, $subject, $body, $header);
-        
+
         // Base de Datos
         $enlace = mysqli_connect("localhost", "aballera_alex", "Juan03:16", "aballera_formularios");
         if (mysqli_connect_errno()) {
@@ -73,7 +73,7 @@ $header .= 'From:' . $email. '\r\n'; // Sender's Email
             echo "error de depuración: " . mysqli_connect_error() . "\r\n";
             exit;
         } else {
-          mysqli_query($enlace, "INSERT INTO form_element (name, lastname, phone, email, message) VALUES ('$name', '$lastname', '$phone', '$email','$message')"); //Insert Query
+          mysqli_query($enlace, "INSERT INTO form_element (name, lastname, phone, email, message) VALUES ('$name', '$lastname', '$phone', '$email','$msg')"); //Insert Query
           mysqli_close($enlace);
         }
     }
